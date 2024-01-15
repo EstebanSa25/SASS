@@ -1,0 +1,18 @@
+/*
+RGB
+    red($color)
+    green($color)
+    blue($color)
+HSL
+    hue($color)
+    saturation($color)
+    lightness($color)
+
+     darken($color,cantidad)
+     lighten($color,cantidad)
+     saturate($color,cantidad)
+     dsesaturate($color,cantidad)
+     adjust-hue($color,cantidad)
+*/
+body {
+  background: #ffaa00; }

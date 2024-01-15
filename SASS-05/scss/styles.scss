@@ -1,0 +1,54 @@
+//Color sustrativo(pinturas,imprenta)
+    //cyan,magenta,amarrillo,black(CMYK)
+//color aditivo (luz,pantalla)
+    //red,green,blue(RGB)
+    //jue,saturation,lighten(hsl)
+    // hue-tono de color o a 360grados
+    //saturation->intensidad del color,de gris al color puro
+    //lighten-> la cantidad de luz
+
+// body{
+//     $color:rgb(103, 231, 231);
+//     background: $color;
+//     h:hue($color);
+//     s:saturation($color);
+//     l:lightness($color);
+// }
+
+/*
+RGB
+    red($color)
+    green($color)
+    blue($color)
+HSL
+    hue($color)
+    saturation($color)
+    lightness($color)
+
+     darken($color,cantidad)
+     lighten($color,cantidad)
+     saturate($color,cantidad)
+     dsesaturate($color,cantidad)
+     adjust-hue($color,cantidad)
+*/
+
+$base-color:Red;
+$text-color-light:#ffff;
+$text-color-dark:#222;
+@function color-text{
+    @if lightness($base-color)>50{
+        @return $text-color-dark;
+    }@else{
+@return $text-color-light;
+    }
+}
+
+// body{
+//     background: $base-color;
+//     color: color-text();
+// }
+body{
+    $color:red;
+    background: adjust-hue($color,40);
+}
+

@@ -1,0 +1,65 @@
+@mixin button($colors...){
+    @if $buttons{
+        @if length($colors){
+  @for $i from 2 through length($colors){
+   &.Button-#{nth($colors,$i)}{
+        color: map-get($buttons-colors, nth($colors,$i));
+    }
+  }
+    }
+}
+}
+
+// @mixin button($colors...){
+//         @if $buttons{
+//             .button{
+//                 display: inline-block;
+//                 margin: 0;
+//                 color:map-get($buttons-colors,nth($colors,1));
+         
+//             a{
+//                 text-decoration: none;
+//             }
+//             @if length($colors){
+//       @for $i from 2 through length($colors){
+//         &.#{nth($colors,$i)}{
+//             color: map-get($buttons-colors, nth($colors,$i));
+//         }
+//       }
+//         }
+//     }
+// }
+//     }
+
+
+// @mixin menu($selector-item,$selector-link){
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     padding-left: 0;
+//     list-style: none;
+//     #{$selector-item}{
+//         display: block;
+//     }
+//     #{$selector-link}{
+//         text-decoration: none;
+//         display: block;
+//     }
+// }
+// @mixin menu($font-size){
+// color: red;
+// display:block ;
+// @media screen and (min-widh:1024px) {
+//     @content;
+// }
+// }
+@mixin mq($breakpoint){
+    @if map-has-key($breakpoints , $breakpoint ){
+        @media screen and (min-widh:map-get($breakpoints,$breakpoint)){
+            @content;
+        }
+    }@else if type-of($breakpoint )==number and  unit ($breakpoint)=='px'{
+        @media screen and (min-widh:$breakpoint){
+            @content;
+        }
+    }
+}

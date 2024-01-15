@@ -1,0 +1,14 @@
+@import "config/variables";
+@import "mixins/mixins";
+
+ @include button(map-keys($buttons-colors)...);
+//d
+ body{
+   background-color: red;
+   @include mq(small){
+      background: green;
+   }
+   @include mq(large){
+      background: yellow;
+   }
+ }

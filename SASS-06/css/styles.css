@@ -1,0 +1,58 @@
+/*--output-style=expanded|compressed|nested |compact*/
+body {
+  margin: 0; }
+
+/*
+Debug con
+    @debug
+    @warn
+    @error
+*/
+/*
+Estructura de proyecto
+
+SMACCS
+    base(etiquetas html)
+    modules (componentes reutilizables ej botones,menus)
+    layout (geometria y posicion)
+    theme (tipografia y color,identidad visual de la marca)
+    state (elementos que cambian)
+
+ITCSS
+7in1
+
+
+Recomendado
+ base(etiquetas html)
+ components (componentes reutilizables ej botones,menus)
+ layout (geometria y posicion)
+ pages (estilo especifico)
+ theme(tipografia y color,identidad visual de la marca)
+ state(elementos que cambian)
+*/
+.main_header {
+  margin: 0;
+  width: 100%;
+  height: 500px;
+  background: radial-gradient(436.04% 100% at 0% 56.92%, #001F1F 0%, #258693 43.39%, #135858 71.6%, #001F1F 100%); }
+  .main_header .header_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+.logo_header {
+  width: 150px; }
+
+.main_header_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.main_header_content__item .usain {
+  width: 80%;
+  text-align: center; }
+
+.absolute {
+  position: absolute; }

@@ -1,0 +1,127 @@
+// @function double($number){
+//  @if type-of($number)==number{
+//     @return $value;
+//  }
+// @return null
+// }
+
+// body{
+//     font-size:double(red);
+// }
+
+@import "config/variables";
+@import "config/functions";
+// body{
+//     font-size: em(20px);
+//     background: img('hola');
+// }
+
+
+//Funciones de strings
+//quoute($string)
+//unquote($string)
+//str-length($string)
+//str-index($string,$value)
+//tu-upper
+// $width:1px;
+// $style:solid;
+// $color:Red;
+
+// body{
+//     border: unquote( $width +' ' + $style + ' ' + $color);
+//     &::before{
+//         content: quote($style) ;
+//     }
+//     index:str-index($style,'i');
+// }
+// @function columns ($columns,$total-columns){
+// @return percentage($columns / $total-columns);
+// }
+
+// //Funciones de numeros
+// @for $i from 1 through 12{
+//     .cols-#{$i}{
+//         width: columns($i,12);
+//     }
+// }
+// .cols-4{
+//     width: columns(4,12);
+// }
+/*
+Funciones de mapas y listas
+nth($list,n)
+index($list,value)
+join($list1,$list2,$list3,separador:space
+append($list,$value,$separador:sapce|comma)
+
+map-get($map,$key)
+map-keys($map)
+map-values($map)
+map-has-key($map,$key)
+map-merge($map1,$map2)
+
+*/
+$border:1px solid red;
+$border2:1px dotted green;
+
+// body{
+//     border: join($border,$border2,comma );
+// }
+// $color:red;
+// $colors:(
+//     primary:green,
+//     secondary:red,
+//     tertiary:blue
+// );
+// @function color($color-key){
+//     @if map-has-key($map: $colors, $key: $color-key ){
+//         @return map-get($map: $colors, $key:$color-key );
+//     }
+//     @return null;
+// }
+// body{
+//     border-color: color(secondary) ;
+// }
+// body{
+//     border: append(1px solid,$color);
+// }
+
+/*
+Funciones de instrospeccion
+inspect()
+type-of()
+unit()--> devuelve la unidad de un numero como string
+unitless() -->devuelve true si el numero no tiene unidad
+mixin-exist($mixin)
+function-exists(function)
+variable-exists($variable)
+global-variable-exists($variable)
+*/
+// $colors:(
+//     primary:yellow,
+//     secondary:red
+// );
+// body{
+//     color: unit(10px)
+// }
+// @mixin button {
+//     color: red;
+// }
+// @if mixin-exists($name: button){
+//     body{
+//         background: red;
+//     }
+// }
+@function long-shadow($n,$color){
+    $shadow: unquote($string: '1px 1px #{$color}');
+    @for $i from 2 through $n{
+        $shadow:append($shadow,#{$i*1px $i*1px $color},comma )
+    }
+    @return $shadow;
+}
+body{
+    background: red;
+}
+.text{
+    text-shadow: long-shadow(500,darken(red,500));
+}

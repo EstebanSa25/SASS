@@ -1,0 +1,50 @@
+// $size:200px;
+// $width:20px !default;
+// $primary-color:blue !default;
+// $color:red;
+
+// body{
+//     padding-top: $size;
+//     margin:$width;
+// }
+// p{
+//     $size:20px;
+//     margin: $width;
+//     padding: $size;
+//     width: calc(100% - #{$size});
+// }
+// .#{$color}{
+//     color:$color;
+// }
+// ul{
+//     margin: 0;
+//     li{
+//         margin: 0;
+//     }
+// }
+
+
+//Tipos de datos en Sass
+//Strings
+//Numeros
+//Colores
+//Booleans
+//Maps
+//Lists
+// $var: 'hola';
+$colores:(
+    primario:Red,
+    secundario:blue,
+    terciario:yellow
+);
+body{
+// background: type-of($var);
+//  content: $var;
+color: map-get($colores,terciario);
+}
+@import "config";
+@import "menu";
+$var:20px;
+body{
+    background: yellow;
+}

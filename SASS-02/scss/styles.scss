@@ -1,0 +1,87 @@
+// @import "components/base";
+// @import "components/buttons";
+// body{
+//     display: block;
+// }
+
+
+//@extend
+// %button {
+//     display: inline-block;
+//     margin: 1em 0;
+//     padding: .5em 1.5em;
+// }
+
+// .button{
+//     @extend %button;
+// }
+
+
+
+// .button{
+//     display: inline-block;
+//     margin: 1em 0;
+//     padding: .5em 1.5em;
+// }
+// .button-alert{
+//     @extend .button;
+//     background: red;
+//     color: #fff;
+// }
+
+
+
+//Condicionales
+// $dev: true;
+// @if $dev ==true{
+//     *{
+//         outline: 1px solid red;
+//     }
+// }@else if 3<5{
+//    *{
+//     display: block;
+//    }
+// }@else{
+//     *{
+//         color: green;
+//     }
+// }
+
+// $buttons:false !default;
+// $colors:true !default;
+// @import "components/buttons";
+// @import "components/colors";
+
+//Iteraciones
+// @for $i from 1 through 20{
+//     @if $i%2==0{
+//     .column-#{$i}{
+//         width: $i*5%;
+//     }
+// }
+// }
+// $colors:Red green blue;
+
+// @each $color in $colors{
+//     .button-#{$color}{
+//         background: $color;
+//     }
+// }
+
+$colors : (
+primary:red,
+secundary:green,
+tertiary:blue
+);
+$brakpoints:(
+small:360px,
+medium:640px,
+large:1024px,
+xlarge:1400px
+);
+
+@each $key,$value in $colors{
+    .button-#{$key}{
+        background: $value;
+    }
+}
